@@ -1,0 +1,391 @@
+/** {
+    box-sizing:border-box // already in bootstrap
+}*/
+/* todo nutteloze css wegdoen !!!!!!!!!!!!!! */
+main {
+    margin: 0 0 8% 25%;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: lighter;
+}
+
+/* profile info */
+h4 {
+    margin: 0;
+}
+
+#h1, #p {
+    margin: 0;
+    padding: 0
+}
+
+#h1 {
+    font-size: 2.8em;
+    font-weight: lighter;
+    margin: -13% 0 0 31rem;
+    text-align: center;
+    color: #fff;
+}
+
+#p {
+    font-size: 1.1em; /*todo where?*/
+    font-weight: 100;
+    letter-spacing: 5px
+}
+
+/* header nav */
+.whiteNavLink:hover, a:hover {
+    color: #808080;
+}
+
+/* lang nav */
+/*.nav ul li {
+    float: right;
+    margin: 1rem 1rem 0 0;
+    text-decoration: none;
+}*/
+
+/* profile https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout */
+.wrapper {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+}
+.one {
+    grid-column: 1;
+}
+.two {
+    grid-column: 2;
+}
+
+.banner {/*
+    width:100%;
+    height:300px;*/
+    display:table;
+    text-align:center;
+}
+
+.title {
+     font-weight: lighter;
+     text-align: center;
+ }
+
+#section {
+    display:table-cell;
+    vertical-align:middle
+}
+
+.container input:focus {
+    outline: 0 !important;
+}
+
+.container img {
+    padding-bottom: 3.5rem;
+}
+
+.rem, .stylingFriends {
+    margin: 1rem;
+}
+
+.table {
+    max-width: 25%;
+}
+
+a {
+    /*text-decoration: none !important;*/
+    text-decoration: underline; /* todo verify */
+    color: #000;
+}
+/* table everyone */
+/*.container td {
+    margin-top: 0.4rem; //todo
+}*/
+/* everyone */
+.table {
+    max-width: 25%;
+}
+/* everyone filter */
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn.active {
+    background-color: #666;
+    color: white;
+}
+
+.btn:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/*table {
+    margin: 0 0 40px 0;
+    width: 100%;
+    box-shadow: 0 1px 3px #00f; //todo
+    display: table;
+}
+
+table tr {
+    display: table-row;
+    background-color: green;
+}
+
+table tr td:nth-child(2n) {
+    background-color: purple;
+}*/
+
+.myform {
+    position:relative;
+    display:-ms-flexbox;
+    display:flex;
+    padding:1rem;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    width:100%;
+    pointer-events:auto;
+    background-color:#fff;
+    background-clip:padding-box;
+    border:1px solid rgba(0,0,0,.2);
+    border-radius:1.1rem;
+    outline:0;
+    max-width:500px;
+}
+
+.tx-tfm {
+    text-transform: uppercase;
+}
+
+.mybtn {
+    border-radius: 50px;
+}
+
+.login-or {
+    position: relative;
+    /*color:#aaa;*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+.span-or {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    margin-left: -25px;
+    background-color: #fff;
+    width: 50px;
+    text-align: center;
+}
+
+.hr-or {
+    height:1px;
+    margin-top:0!important;
+    margin-bottom:0!important;
+}
+
+.google {
+    color: #666;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    outline: none;
+    border: 1px solid orange; /*#d3d3d3*/
+}
+
+form .error {
+    color: red;
+}
+
+#second {
+    display: none;
+}
+
+.containerCentered {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+#students tr td:nth-child(2) {
+    margin-left: 5rem;
+}
+
+.paddingsection {
+    padding-bottom: 4rem;
+}
+
+.goodfitStatus {
+    margin-left: .3rem;
+}
+
+.betterForm {
+    margin-top: 5rem;
+}
+
+.buttonAlligned {
+    text-align: center;
+    margin-top: 15rem;
+}
+
+.betterButton {
+    margin-left: 1rem;
+}
+
+.navbar-translate a, .navbar-translate input, .navbar-translate form {
+    /*
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f3f3f3;*/
+    display: inline-block;
+}
+
+.colorNav .container div {
+    margin-left: 10%;
+}
+
+.navbar-brand {
+    float: left;/*
+    display: block;*/
+    text-align: center;
+    padding: 20px 36px !important;
+    text-decoration: none;
+    font-size: 24px !important;
+}
+
+/*
+nav ul li a:not(.current) {
+    padding: 1.25rem 3.1rem 1.25rem 3.1rem;
+}
+
+nav ul li a:hover:not(.current) { todo
+    background-color: #ddd;
+}
+
+nav ul .current {
+    color: #ffffff;
+    background-color: #de0000;
+}
+*/
+
+/* index maak relatie */
+#makeRel select { /*input?*/
+    width: 20% !important;
+    padding: 0 !important;
+}
+
+#makeRel input[type=submit] {
+    padding: 0 !important;
+    width: 7% !important;
+    margin: 2%;
+}
+
+footer {
+!important
+    margin-top: 5%;
+    padding: 20px 40px 20px 40px;
+    font-size: 1.2rem;
+    background-color: #202020;
+    line-height: 1.3rem;
+    color: #ffffff;
+    display: block;
+    flex-direction: column;
+}
+
+footer ul li {
+    display: inline-block;
+}
+
+footer ul li:nth-child(2) {
+    margin-left: 74%;
+}
+
+footer a {
+    color: #fff;
+}
+
+
+input[type=submit]:hover {
+    background-color: #ffffff;
+}
+
+input:not([type=submit]), select, textarea, option {
+    width: 50%;
+    padding: 0.8rem;
+    border: 0.1rem solid #cccccc;
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+    margin-top: 0.6rem;
+    margin-bottom: 1.6rem;
+    resize: vertical;
+    font-size:1rem;
+}
+
+input[type=submit] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    font-size: 1.2rem;/*
+    margin: 0.5rem 25%; login submit onder andere*/
+}
+
+/* login */
+fieldset {
+    border: none;
+}
+
+/* login, profile */
+fieldset div label, fieldset div input, fieldset p label, fieldset p input {
+    width: 50% !important;/*
+    margin-left: 25% !important;*/
+    font-size: 1.4em !important;
+}
+
+div.error p {
+    background-color: #f2dede;
+    color: #f00;
+    padding: 1rem;
+    width: 50%;
+    margin: 4rem 0 0.5rem 25%;
+    border: 5px solid #f00;
+    border-radius: 0.5rem;
+}
+
+.danger {
+    background-color: #f2dede;
+    color: #b94a48;
+    padding: 1rem;
+    width: 50%;
+    margin: 4rem 0 2rem 0;
+}
+
+.success {
+    background-color: #dedef2;
+    color: #4a48b9;
+    margin: 1rem 0;
+}
+
+.success p {
+    padding: 1rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* error page */
+#errordiv h2 {
+    margin-top: 1rem;
+}

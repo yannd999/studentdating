@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+    <head th:insert="fragments/header.html :: style">
+        <meta charset="UTF-8"/>
+        <title>Edit Profile | Student Dating</title>
+    </head>
+    <body>
+        <header
+                th:replace="${session.user.role == 'administrator'} ?
+                            ~{fragments/header.html :: adminNav('EditPro', '/edit')} :
+                            ~{fragments/header.html :: noAdminNav('EditPro', '/edit')}">
+        </header>
+        <main>
+<!--
+todo password
+-->
+            <br> <!--todo better? margintop?-->
+            <h4 th:text="#{update}"></h4><br>
+
+            <form th:action="@{/edit}" method="post" th:object="${user}">
+                <fieldset>
+                    <p>
+                        <label for="editFirstName" th:text="#{firstName}"></label> <!--todo why ?? editFirstName}"></label>-->
+                        <input type="text" id="editFirstName" th:field="*{editFirstName}">
+                    </p>
+                    <p>
+                        <label for="editLastName" th:text="#{lastName}"></label>
+                        <input type="text" id="editLastName" th:field="*{editLastName}">
+                    </p>
+                    <p>
+                        <label for="editLocation" th:text="#{Location}"></label>
+                        <input type="text" id="editLocation" th:field="*{editLocation}">
+                    </p>
+                    <input type="submit" value="Submit">
+                </fieldset>
+            </form>
+
+            <h5>Fill in facebook, snapchat, instagram, discord</h5>
+        </main>
+        <div th:insert="fragments/footer.html :: footer"></div>
+    </body>
+</html>

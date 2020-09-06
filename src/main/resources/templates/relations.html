@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+    <head th:insert="fragments/header.html :: style">
+        <meta charset="UTF-8">
+        <title>Relations | Student Dating</title>
+    </head>
+    <body>
+    <header
+            th:replace="${session.user.role == 'administrator'} ?
+                    ~{fragments/header.html :: adminNav('Relations', '/relations')} :
+                    ~{fragments/header.html :: noAdminNav('Relations', '/relations')}">
+    </header>
+        <main>
+            <h3 th:text="#{Relations}"></h3>
+            <h2 th:if="${relations == null || relations.size() == 0}" th:text="#{NoRel}"></h2>
+
+            <div th:if="${relations.size() > 0}">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th th:text="#{pA}"></th>
+                            <th th:text="#{pB}"></th>
+                        </tr>
+                    </thead>
+                    <tbody th:each="relation: ${relations}">
+                        <tr>
+                            <td th:text="${relation.lover_1}"></td>
+                            <td th:text="${relation.lover_2}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <div th:insert="fragments/footer.html :: footer"></div>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <div th:fragment="header">
+            <img src="/img/banner.png" style="width:100%;" alt="Achtergrond">
+
+            <form th:action="@{/logout}" method="post">
+                <input style="background-color:#fff;margin: 0.5rem 2%;" type="submit" value="Sign Out"/>
+            </form>
+
+            <nav>
+                <ul>
+                    <!--<li><a href="/tasks" th:classappend="${class == 'current' ? '': 'current'}" th:text="#{Tasks}"></a></li>
+                    <li><a href="/tasks/new" th:class="${class}" th:text="#{NewTask}"></a></li>
+                    -->
+                    <li><a href="/home">Homeee</a></li> <%--// todo nuttig om extra home te hebben ?--%>
+                    <li><a href="/profile">My Profile</a></li>
+                    <li><a href="/everyone">Students</a></li>
+                    <!--<c:if test="${rolUser == 'administrator'}"> //todo-->
+                    <li><a href="/relations">Relations</a></li>
+                    <li><a href="/chatPage">Chat</a></li>
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>

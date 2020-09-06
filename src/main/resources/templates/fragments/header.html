@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:fragment="style">
+    <meta charset="UTF-8"/><!--
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" th:href="@{/css/reset.css}">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+</head>
+<body>
+
+    <!-- admin-->
+    <header th:fragment="adminNav(title, path)" role="banner">
+        <img src="/img/banner.png" style="width:100%;" alt="Achtergrond">
+
+        <nav>
+            <div class="banner">
+                <section id="section">
+                    <h1 id="h1">Student Dating Application</h1>
+                </section>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-expand-lg colorNav">
+            <div class="container">
+                <div class="navbar-translate betterFont">
+                    <a class="navbar-brand whiteNavLink" href="/" th:text="#{Home}"></a>
+                    <a class="navbar-brand whiteNavLink" href="/profile" th:text="#{Profile}"></a>
+                    <a class="navbar-brand whiteNavLink" href="/everyone" th:text="#{Students}"></a>
+                    <a class="navbar-brand whiteNavLink" href="/relations" th:text="#{Relations}"></a>
+                    <a class="navbar-brand whiteNavLink" href="/chat">Chat</a>
+                    <a class="navbar-brand whiteNavLink" href="/admin" th:text="#{Admin}"></a>
+                    <form th:action="@{/logout}" method="post">
+                        <input class="navbar-brand whiteNavLink" style="background-color:#fff;margin: -1%;" type="submit" th:value="#{SignOut}"/>
+                    </form>
+                    <a th:href="${path} + '?lang=nl'"><img src="/img/favicon-32x32be.png" alt="lang nl"></a>
+                    <a th:href="${path} + '?lang=en'"><img src="/img/favicon-32x32uk.png" alt="lang eng"></a>
+                    <a th:href="${path} + '?lang=fr'"><img src="/img/favicon-32x32fr.png" alt="lang fr"></a>
+                </div>
+            </div>
+        </nav>
+        <h1 class="title" th:text="#{${title}}"></h1>
+    </header>
+
+    <!--niet admin-->
+    <header th:fragment="noAdminNav(title, path)" role="banner">
+        <img src="/img/banner.png" style="width:100%;" alt="Achtergrond">
+
+        <nav>
+            <div class="banner">
+                <section id="section">
+                    <h1 id="h1">Student Dating Application</h1>
+                </section>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-expand-lg colorNav">
+            <div class="container">
+                <div class="navbar-translate betterFont">
+                    <a class="navbar-brand whiteNavLink" href="/" th:text="#{Home}"></a>
+                    <a class="navbar-brand whiteNavLink" href="/profile" th:text="#{Profile}"></a>
+                    <a class="navbar-brand whiteNavLink" href="/everyone" th:text="#{Students}"></a>
+                    <a class="navbar-brand whiteNavLink" href="/chat">Chat</a>
+                    <form th:action="@{/logout}" method="post">
+                        <input class="navbar-brand whiteNavLink" style="background-color:#fff;margin: -1%;" type="submit" th:value="#{SignOut}"/>
+                    </form>
+                    <a th:href="${path} + '?lang=nl'"><img src="/img/favicon-32x32be.png" alt="lang nl"></a>
+                    <a th:href="${path} + '?lang=en'"><img src="/img/favicon-32x32uk.png" alt="lang eng"></a>
+                    <a th:href="${path} + '?lang=fr'"><img src="/img/favicon-32x32fr.png" alt="lang fr"></a>
+                </div>
+            </div>
+        </nav>
+        <h1 class="title" th:text="#{${title}}"></h1>
+    </header>
+</body>
+</html>

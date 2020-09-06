@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="web:war exploded" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f54c2974-037b-437c-9ba0-706e9876a057" name="Default Changelist" comment="" />
+    <list default="true" id="f4524817-3fef-4ee3-85d0-b9ce4a39cc46" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,76 +16,55 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="CSS File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
-  <component name="LogFilters">
-    <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
-  </component>
   <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="alwaysUpdateSnapshots" value="false" />
-        <option name="checksumPolicy" value="FAIL" />
-        <option name="failureBehavior" value="FAST" />
-        <option name="localRepository" value="" />
-        <option name="mavenHome" value="" />
-        <option name="nonRecursive" value="false" />
-        <option name="outputLevel" value="INFO" />
-        <option name="pluginUpdatePolicy" value="DEFAULT" />
-        <option name="printErrorStackTraces" value="false" />
-        <option name="usePluginRegistry" value="false" />
-        <option name="userSettingsFile" value="" />
-        <option name="workOffline" value="false" />
-      </MavenGeneralSettings>
-    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
-        <option name="createModuleGroups" value="false" />
-        <option name="createModulesForAggregators" value="true" />
-        <option name="dedicatedModuleDir" value="" />
-        <option name="downloadDocsAutomatically" value="false" />
-        <option name="downloadSourcesAutomatically" value="false" />
-        <option name="excludeTargetFolder" value="true" />
-        <option name="generatedSourcesFolder" value="AUTODETECT" />
-        <option name="importAutomatically" value="false" />
-        <option name="keepSourceFolders" value="true" />
-        <option name="lookForNested" value="false" />
-        <option name="updateFoldersOnImportPhase" value="process-resources" />
-        <option name="useMavenOutput" value="true" />
+        <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
-    <option name="enabledProfiles">
-      <list />
-    </option>
   </component>
-  <component name="ProjectId" id="1f9ZAXQNy2kqcxs3ry3OTqFMS20" />
+  <component name="ProjectId" id="1fbkfUa5icG66CUNB8xX1QwdJpf" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/css" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../ucll/Jaar2/Trim1/Web3/examenOefenen" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yannd\Desktop\Bureau\sauvegarder\Student Dating\zelf\studentdating\src\main\resources\static" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="domain.model" />
-      <recent name="controller" />
-      <recent name="controller.handler" />
+      <recent name="com.studentdating.studentdating.model.entity" />
+      <recent name="com.studentdating.studentdating.controller" />
+      <recent name="com.studentdating.studentdating.utility" />
+      <recent name="com.studentdating.studentdating.model" />
+      <recent name="com.studentdating.studentdating" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\yannd\Desktop\Bureau\sauvegarder\Student Dating\Opnieuw\Student Dating\web\css" />
-      <recent name="C:\Users\yannd\Desktop\Bureau\sauvegarder\Student Dating\Opnieuw\Student Dating\web\js" />
-      <recent name="C:\Users\yannd\Desktop\Bureau\sauvegarder\Student Dating\Opnieuw\Student Dating\web" />
-      <recent name="C:\Users\yannd\Desktop\Bureau\sauvegarder\Student Dating\Opnieuw\Student Dating\src\controller\handler" />
-      <recent name="C:\Users\yannd\Desktop\Bureau\sauvegarder\Student Dating\Opnieuw\Student Dating\src" />
+      <recent name="C:\Users\yannd\Desktop\Bureau\sauvegarder\Student Dating\zelf\studentdating\src\main\resources\static\js" />
+      <recent name="C:\Users\yannd\Desktop\Bureau\sauvegarder\Student Dating\zelf\studentdating\src\main\resources\templates" />
+      <recent name="C:\Users\yannd\Desktop\Bureau\sauvegarder\Student Dating\zelf\studentdating\src\main\resources\templates\fragments" />
+      <recent name="C:\Users\yannd\Desktop\Bureau\sauvegarder\Student Dating\zelf\studentdating\src\main\java\com\studentdating\studentdating\controller" />
+      <recent name="C:\Users\yannd\Desktop\Bureau\sauvegarder\Student Dating\zelf\studentdating\src\main\resources\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -106,76 +80,11 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.16" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.16" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
-      <deployment>
-        <artifact name="web:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_16_Student_Dating_2" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="52378" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
+    <configuration name="StudentDatingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="studentdating" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.studentdating.studentdating.StudentDatingApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="web:war exploded" />
-        </option>
       </method>
     </configuration>
   </component>
@@ -184,13 +93,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f54c2974-037b-437c-9ba0-706e9876a057" name="Default Changelist" comment="" />
-      <created>1595632125633</created>
+      <changelist id="f4524817-3fef-4ee3-85d0-b9ce4a39cc46" name="Default Changelist" comment="" />
+      <created>1596494282657</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1595632125633</updated>
-      <workItem from="1595632127771" duration="49203000" />
-      <workItem from="1595852121314" duration="52484000" />
+      <updated>1596494282657</updated>
+      <workItem from="1596494284429" duration="180387000" />
+      <workItem from="1598267883433" duration="42215000" />
+      <workItem from="1598630830225" duration="17362000" />
+      <workItem from="1599347277766" duration="4076000" />
+      <workItem from="1599410673131" duration="1001000" />
     </task>
     <servers />
   </component>

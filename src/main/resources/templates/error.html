@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:insert="fragments/header.html :: style">
+        <meta charset="UTF-8">
+        <title>Error Page | Student Dating</title>
+    </head>
+    <body>
+        <main>
+            <div>
+                <div>
+                    <h1 style="margin:10rem 0 0 35%;" th:text="#{pNotExists}"></h1>
+                </div>
+
+                <p style="margin:4rem 0 0 40%;background-color:red;padding:1rem;width:5rem;list-style-type:none;">
+                    <a style="color:#fff;text-decoration:none;" href="/" th:text="#{Home}"></a>
+                <p>
+
+                <div style="margin:10rem 0 0 35%;" id="errordiv">
+                    <h2 th:text="#{Path}"></h2>
+                    <h3 th:text="${path}"></h3>
+
+                    <h2 th:text="#{Error}"></h2>
+                    <h3 th:text="${error}"></h3>
+
+                    <h2 th:text="#{Status}"></h2>
+                    <h3 th:text="${status}"></h3>
+
+                    <h2 th:text="#{Message}"></h2>
+                    <h3 th:text="${message}"></h3>
+
+                    <div th:if="${exception != null}">
+                        <h2 th:text="#{Exception}"></h2>
+                        <h3 th:text="${exception}"></h3>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div th:insert="fragments/footer.html :: footer"></div>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+    <head th:insert="fragments/header.html :: style">
+        <meta charset="UTF-8"/>
+        <title>Home | Student Dating</title>
+    </head>
+    <body>
+        <header
+                th:replace="${session.user.role == 'administrator'} ?
+                    ~{fragments/header.html :: adminNav('Home', '/')} :
+                    ~{fragments/header.html :: noAdminNav('Home', '/')}"> <!-- todo ander titel? -->
+        </header>
+
+        <!--<div th:insert="fragments/nav.html :: header"></div>-->
+
+        <main>
+            <div id="welcome" class="success" th:if="${welcome != null}">
+                    <p th:text="Welcome ${user}"></p>
+            </div>
+
+            <h4 style="margin-top: 6%;" th:text="#{relation}"></h4>
+
+                <h2 th:if="${persons == null}">No persons yet, ik hoor erbij dus mag niet</h2><!-- translation ? -->
+
+                <div th:if="${persons != null && persons.size() > 0}" id="makeRel">
+                    <label for="itemsA"></label>
+                    <select id="itemsA">
+                        <div th:each="person: ${persons}">
+                            <option id="keuzeA" th:value="${person.firstName} + ' ' + ${person.lastName}" th:text="${person.firstName} + ' ' + ${person.lastName}"></option> <!-- todo id keuzeA weg? -->
+                        </div>
+                    </select>
+
+                    <label for="itemsB" th:text="#{Met}"></label>
+                    <select id="itemsB">
+                        <div th:each="person: ${persons}">
+                            <option id="keuzeB" th:value="${person.firstName} + ' ' + ${person.lastName}" th:text="${person.firstName} + ' ' + ${person.lastName}"></option>
+                        </div>
+                    </select> <!--todo form of href, javascript? angular? web4-->
+
+                    <input type="submit" id="relation" th:value="#{Samen}"/> <!--todo form of href, javascript? angular? web4-->
+                </div>
+
+            <p>See all <a href="/everyone" style="text-decoration: underline;" th:text="#{Profiles}"></a></p>
+        </main>
+        <div th:insert="fragments/footer.html :: footer"></div>
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/home.js"></script><!-- type="text/javascript"-->
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/css/style.css" th:href="@{/css/style.css}">
+        <title>Log In | Student Dating</title>
+    </head>
+    <body>
+        <main style="margin:0 0 6% 36%;">
+            <h1 class="title" style="width:45%;margin-top:5rem;" th:text="#{LogIn}"></h1><!-- style="margin:5rem 0 10rem 45%;"-->
+
+            <p style="background-color:#d9edf7;color:#31708f;margin-left:6%;width:16rem;padding:1rem;" th:if="${param.logout}" th:text="#{successLogout}"></p>
+            <p style="background-color:#f2dede;color:#b94a48;margin-left:14%;width:10rem;padding:1rem;" th:if="${param.error}" th:text="#{invalidCred}"></p>
+
+            <form th:method="post" th:action="@{/login}" style="margin-bottom:3rem;">
+                <fieldset>
+                    <div>
+                        <label for="username" th:text="#{Username}"></label>
+                        <input type="text" id="username" name="username" value="test@mail.com">
+                    </div>
+                    <div>
+                        <label for="password" th:text="#{Password}"></label>
+                        <input type="password" id="password" name="password" value="t">
+                    </div>
+                    <input type="submit" th:value="#{LogIn}">
+                </fieldset>
+            </form>
+            <br>
+            <p th:text="#{Noacc }"></p><p style="margin-bottom:5%;"><a style="color:#00f;" th:href="@{/signup}" th:text="#{SignUp}"></a></p>
+        </main>
+        <div th:insert="fragments/footer.html :: footer"></div>
+    </body>
+</html>

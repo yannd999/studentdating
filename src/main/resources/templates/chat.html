@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:insert="fragments/header.html :: style"><!--
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">-->
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+        <!--<link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>-->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"><!--
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+        <title>Chat | Student Dating</title>
+    </head>
+    <body>
+        <header
+                th:replace="${session.user.role == 'administrator'} ?
+                    ~{fragments/header.html :: adminNav('Chat', '/chat')} :
+                    ~{fragments/header.html :: noAdminNav('Chat', '/chat')}">
+        </header>
+        <main>
+            <div th:if="${loggedinUser != null}" class="rem">
+
+                <h1 style="visibility:hidden;" id="userName" th:text="${loggedinUser.username}"></h1>
+
+                <h2 class="stylingFriends" th:text="#{friends}"></h2>
+                <h2 class="stylingFriends" id="onlineFriends"></h2>
+                <div id="parent">
+                    <div th:if="${persons != null && persons.size() > 0}">
+                        <table class="table table-striped table-dark">
+                            <tr>
+                                <th th:text="#{Person}"></th>
+                                <th th:text="#{Chat}"></th>
+                            </tr>
+                            <tr th:each="person: ${persons}">
+                                <td th:text="${person.firstName} + ' ' + ${person.lastName}"></td><!-- todo username as id for now?? -->
+                                <td th:id="${person.username}" class="persoon" th:text="#{Chat}"></td> <!-- todo chat met persoon-->
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="chat"></div>
+        </main>
+        <div th:insert="fragments/footer.html :: footer"></div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/opdr1_EN_opdr3.js"></script>
+</html>

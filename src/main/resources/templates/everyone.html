@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+    <head th:insert="fragments/header.html :: style">
+        <meta charset="UTF-8">
+        <title>Profiles | Student Dating</title>
+    </head>
+    <body>
+        <header
+                th:replace="${session.user.role == 'administrator'} ?
+                    ~{fragments/header.html :: adminNav('Students', '/everyone')} :
+                    ~{fragments/header.html :: noAdminNav('Students', '/everyone')}">
+
+        </header>
+        <main>
+            <div th:if="${persons.size() > 0}">
+                <div id="myBtnContainer">
+                    <button id="showAll" class="btn active" th:text="#{ShowAll}"></button>
+                    <button id="showMale" class="btn" th:text="#{Male}"></button>
+                    <button id="showFemale" class="btn" th:text="#{Female}"></button>
+                    <p>todo filter by age (comparable)</p>
+                </div>
+                <br><!--
+                <p style="display: inline-block;font-weight:bold;">Name</p><p style="margin-left: 2rem;display: inline-block;">Location</p>-->
+                <table id="students">
+                    <tr>
+                        <th th:text="#{lastName}"></th>
+                        <th th:text="#{Location}"></th>
+                    </tr>
+                    <tr th:class="${person.sex} + ' ' + container" th:each="person: ${persons}">
+                        <td th:text="${person.firstName} + ' (' + ${person.age} + ${person.sex} + ')'"></td>
+                        <td th:text="${person.location}"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div th:if="${persons.size() == 0}">
+                <h1 th:text="#{NobodyHere}"></h1>
+            </div>
+        </main>
+    </body>
+    <div th:insert="fragments/footer.html :: footer"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        document.getElementById("showAll").addEventListener("click", function() {
+            document.getElementsByClassName("active")[0].className = document.getElementsByClassName("active")[0].className.replace(" active", "");
+            this.className += " active";
+            filter('all');
+            }, false);
+        document.getElementById("showMale").addEventListener("click", function() {
+            document.getElementsByClassName("active")[0].className = document.getElementsByClassName("active")[0].className.replace(" active", "");
+            this.className += " active";
+            filter('F');
+            }, false);
+        document.getElementById("showFemale").addEventListener("click", function() {
+            document.getElementsByClassName("active")[0].className = document.getElementsByClassName("active")[0].className.replace(" active", "");
+            this.className += " active";
+            filter('M');
+            }, false);
+
+        function filter(f) {
+            for (var i = 1; i < document.getElementsByTagName('tr').length; i++) {
+                document.getElementsByTagName('tr')[i].style.visibility = '';
+            }
+
+            if (f !== 'all') {
+                for (var j = 1; j < document.getElementsByTagName('tr').length; j++) {
+                    if (document.getElementsByTagName('tr')[j].className !== (f + ' container')) {
+                        document.getElementsByTagName('tr')[j].style.visibility = 'hidden';
+                    }
+                }
+            }
+        }
+    </script>
+</html>

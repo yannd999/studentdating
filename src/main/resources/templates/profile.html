@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+    <head th:insert="fragments/header.html :: style">
+        <meta charset="UTF-8">
+        <title>My Profile | Student Dating</title>
+    </head>
+    <body>
+        <header
+                th:replace="${session.user.role == 'administrator'} ?
+                    ~{fragments/header.html :: adminNav('MyPro', '/profile')} :
+                    ~{fragments/header.html :: noAdminNav('MyPro', '/profile')}">
+        </header>
+
+        <!--<div th:insert="fragments/nav.html :: header"></div>-->
+
+        <main>
+            <div class="wrapper">
+                <div class="one">
+                    <h4 th:text="#{lastName} + ': ' + ${user.firstName} + ' ' + ${user.lastName} + ' (' + ${user.getAge()} + ${user.sex} + ')'"></h4>
+                    <h4 th:text="Mail + ': ' + ${user.username}"></h4>
+                    <h4 th:text="#{Location} + ': ' + ${user.location}"></h4>
+                    <br>
+                    <p><a style="color:#007bff;" href="/edit" th:text="#{editPro}"></a></p>
+                </div>
+                <div class="two">
+                    <div th:if="${relations != null && relations.size() == 0}">
+                        <h2 th:text="#{NoMatch}"></h2>
+                    </div>
+                    <div th:if="${relations != null && relations.size() > 0}">
+                        <table>
+                            <tr>
+                                <th th:text="#{Matches}"></th> <!-- betere translatie voor deze ??? -->
+                                <th></th>
+                            </tr>
+                            <tr th:each="relation: ${relations}">
+                                <td th:text="${relation.lover_1} + ' ' + met + ' ' + ${relation.lover_2}"></td>
+                                <td><a href="/chat" th:text="#{Chat}"></a></td> <!-- todo chat met persoon-->
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <div th:insert="fragments/footer.html :: footer"></div>
+    </body>
+</html>

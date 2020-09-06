@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head><!-- th:insert="fragments/header.html :: style">-->
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/css/style.css" th:href="@{/css/style.css}">
+        <title>Sign Up | Student Dating</title>
+    </head>
+<!--    <style>
+        p {
+            background-color: #f2dede;
+            color: #f00;
+            margin-left :45%;
+            width: 12rem;
+            padding: 1rem;
+        }
+
+        footer {
+            margin-top: 28%;/* //todo op elke pagina footer style nu, dus herschrijven in css map?*/
+        }
+
+        h1 {
+            margin: 5rem 0 10rem 45%;
+        }
+    </style>-->
+    <body>
+        <main>
+            <h1 class="title" style="width:49%;margin-top:5rem;" th:text="#{SignUp}"></h1>
+
+            <form th:method="post" th:action="@{/signup}" th:object="${user}" style="margin-bottom:3rem;">
+                <p th:if="${!#fields.globalErrors().isEmpty()}" th:text="${#fields.globalErrors()}"></p>
+
+                <div th:if="${errors != null}" class="danger">
+                    <p th:each="error: ${errors}" th:text="${error}"></p>
+                </div> <!--todo error danger class??????????????????-->
+
+                <fieldset>
+                    <div>
+                        <label for="firstName" th:text="#{firstName}"></label>
+                        <input type="text" th:field="*{firstName}"><!--
+                        <p th:if="*{firstName != null}" th:errors="*{firstName.toString()}"></p>-->
+                    </div>
+                    <div>
+                        <label for="lastName" th:text="#{lastName}"></label>
+                        <input type="text" th:field="*{lastName}"><!--
+                        <p th:if="*{lastName != null}" th:errors="*{lastName.toString()}"></p>-->
+                    </div>
+                    <div>
+                        <label for="birth_date" th:text="#{BirthDate}"></label>
+                        <input type="date" th:field="*{birthDate}">
+                    </div>
+                    <div>
+                        <label for="sex" th:text="#{Sex}"></label>
+                        <input type="text" th:field="*{sex}"><!--
+                        <p th:if="*{sex != null}" th:errors="*{sex.toString()}"></p>-->
+                    </div>
+                    <div>
+                        <label for="location">Location (E.g. Liedekerke)</label>
+                        <input type="text" th:field="*{location}"><!--
+                        <p th:if="*{location != null}" th:errors="*{location.toString()}"></p>-->
+                    </div>
+                    <div>
+                        <label for="username">Email</label>
+                        <input type="text" th:field="*{username}"><!--
+                        <p th:if="*{username != null}" th:errors="*{username.toString()}"></p>-->
+                    </div>
+                    <div>
+                        <input style="display:none;" type="role" th:field="*{role}" value="lid"><!--
+                        <p th:if="*{username != null}" th:errors="*{username.toString()}"></p>-->
+                    </div>
+                    <div>
+                        <label for="password" th:text="#{Password}"></label>
+                        <input type="password" th:field="*{password}"><!--
+                        <p th:if="*{password != null}" th:errors="*{password.toString()}"></p>-->
+                    </div>
+                    <div>
+                        <label for="reppassword" th:text="#{RepPass}"></label>
+                        <input type="password" th:field="*{reppassword}"><!--
+                        <p th:if="*{reppassword != null}" th:errors="*{reppassword.toString()}"></p>-->
+                    </div>
+                    <input type="submit" value="Sign up">
+                </fieldset>
+            </form>
+            <br>
+            <p style="margin-bottom:5%;"><a style="color:#00f;" th:href="@{/login}" th:text="#{LogIn}"></a></p>
+        </main>
+        <div th:insert="fragments/footer.html :: footer"></div>
+    </body>
+</html>
