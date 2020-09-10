@@ -24,7 +24,7 @@
                 </div>
                 <div class="two">
                     <div th:if="${relations != null && relations.size() == 0}">
-                        <h2 th:text="#{NoMatch}"></h2>
+                        <h3 th:text="#{NoMatch}"></h3>
                     </div>
                     <div th:if="${relations != null && relations.size() > 0}">
                         <table>

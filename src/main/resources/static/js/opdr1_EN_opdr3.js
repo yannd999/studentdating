@@ -53,7 +53,7 @@ function chatMetPersoon(naam) {
         var inputId = "bericht" + naam;
         var buttonId = "button" + naam;
         var html =
-            "<div id=" + divId + " style=\"margin-top:5rem;border:2px dashed #000;padding:2rem;border-radius:1.2rem;\">" +
+            "<div id=" + divId + " style=\"margin-top:5rem;border:2px dashed #000;padding:2rem;border-radius:1.2rem;width:75%;\">" +
             "<h3>Chat met " + naam + "</h3>" + "<br>" + //todo chat met email not good
             "<div class='div2' id=" + div2Id + ">" +
             "</div>" + "<br>" +
@@ -73,10 +73,10 @@ function sendMessage(id) {
         document.getElementById("bericht" + id).value = "";
         $.post("/createChat", {zender: myName, ontvanger: id, bericht: bericht});
 
-       /* var request = "zender=" + encodeURIComponent(myName) + "&ontvanger=" + encodeURIComponent(id) + "&bericht=" + encodeURIComponent(bericht);
-        chatRequest.open("POST", "/createChat", true);
-        chatRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        chatRequest.send(request);*/
+        /* var request = "zender=" + encodeURIComponent(myName) + "&ontvanger=" + encodeURIComponent(id) + "&bericht=" + encodeURIComponent(bericht);
+         chatRequest.open("POST", "/createChat", true);
+         chatRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+         chatRequest.send(request);*/
     }
     // quick update
     getChats();
@@ -102,24 +102,28 @@ function writeChats(chats) {
         // als ik bericht krijg -> open chat venster met zender
         if (chats[i]["bericht"] === "") chatMetPersoon(chats[i]["zender"]);
         // bericht schrijven
+        // bericht in het wit
         if (myName === chats[i]["ontvanger"]) {
             var zender = (chats[i]["zender"]);
             chatMetPersoon(zender);
             var pzender = document.createElement("p");
             pzender.appendChild(document.createTextNode(chats[i]["bericht"]));
             pzender.style.padding = "1rem";
+            pzender.style.width = "60%";
             pzender.style.border = "1px solid black";
             pzender.style.borderRadius = "1rem";
             //pzender.appendChild(document.createTextNode(zender + ": " + chats[i]["bericht"]));
             document.getElementById("div2" + zender).append(pzender); //"<p>" + zender + ": " + chats[i]["bericht"] + "</p>");
         }
         // als ik bericht heb gestuurd -> venster openen met ontvanger
+        // bericht in het zwart
         else if (myName === chats[i]["zender"]) {
             var ontvanger = chats[i]["ontvanger"];
             chatMetPersoon(ontvanger);
             var pontvanger = document.createElement("p");
             pontvanger.appendChild(document.createTextNode(chats[i]["bericht"]));
-            pontvanger.style.padding = "1rem 1rem 1rem 20%";
+            pontvanger.style.padding = "1rem 1rem 1rem 5%";
+            pontvanger.style.marginLeft = "40%";
             pontvanger.style.borderRadius = "1rem";
             pontvanger.style.backgroundColor = "#32383e";
             pontvanger.style.color = "white"; //todo choose chatcolor
