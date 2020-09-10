@@ -63,14 +63,24 @@ public class UserController {
 			if (!user.getSex().equals("M") && !user.getSex().equals("F"))
 				errors.add("Sex is invalid");
 		}
+		// unique email
+		UserDTO u = userService.getUser(user.getUsername());
+		if (u != null) errors.add("Email is already taken"); //todo db exception?
 		if (bindingResult.hasErrors() || errors.size() != 0) {//todo check bindingresult
-			for(FieldError fe: bindingResult.getFieldErrors()) {
+			for (FieldError fe: bindingResult.getFieldErrors()) {
 				errors.add(fe.getDefaultMessage().split(":")[1]);
 			}
 			model.addAttribute("errors", errors);
 			return "/signup"; //todo gaat errors kwijt?
 		}
-		userService.createUser(user);
+		// IllegalArgument from UserService when passwords do not match
+		try {
+			userService.createUser(user);
+		} catch (IllegalArgumentException x) {
+			errors.add(x.getMessage());
+			model.addAttribute("errors", errors);
+			return "/signup"; //todo gaat errors kwijt?
+		}
 		return "redirect:/login";
 	}
 

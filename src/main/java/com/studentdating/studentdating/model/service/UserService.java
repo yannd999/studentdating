@@ -12,6 +12,7 @@ public interface UserService extends UserDetailsService {
 	UserDetails loadUserByUsername(String username);
 	List<UserDTO> getUsers();
 	UserDTO getUser(long id);
+	UserDTO getUser(String username);
     void addPerson(UserDTO person);
 	UserDTO getLoggedIn();
 	List<UserDTO> getFriends();

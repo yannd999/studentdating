@@ -45,6 +45,9 @@ public class UserServiceImpl implements UserService {
 	public UserDTO getUser(long id) {
 		return getUsers().get((int) id);
 	} // todo id -1 ??
+	public UserDTO getUser(String username) {
+		return convert(repository.findByUsername(username));
+	}
 
 	@Override //todo inlog role = lid
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
