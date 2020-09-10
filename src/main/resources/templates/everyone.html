@@ -34,7 +34,7 @@
             </div>
 
             <div th:if="${persons.size() == 0}">
-                <h1 th:text="#{NobodyHere}"></h1>
+                <h1 style="margin:0 0 21% 5rem;" th:text="#{NobodyHere}"></h1>
             </div>
         </main>
     </body>
@@ -59,14 +59,16 @@
             }, false);
 
         function filter(f) {
-            for (var i = 1; i < document.getElementsByTagName('tr').length; i++) {
-                document.getElementsByTagName('tr')[i].style.visibility = '';
-            }
+            if (document.getElementsByTagName('tr').length !== 0) {
+                for (var i = 1; i < document.getElementsByTagName('tr').length; i++) {
+                    document.getElementsByTagName('tr')[i].style.visibility = '';
+                }
 
-            if (f !== 'all') {
-                for (var j = 1; j < document.getElementsByTagName('tr').length; j++) {
-                    if (document.getElementsByTagName('tr')[j].className !== (f + ' container')) {
-                        document.getElementsByTagName('tr')[j].style.visibility = 'hidden';
+                if (f !== 'all') {
+                    for (var j = 1; j < document.getElementsByTagName('tr').length; j++) {
+                        if (document.getElementsByTagName('tr')[j].className !== (f + ' container')) {
+                            document.getElementsByTagName('tr')[j].style.visibility = 'hidden';
+                        }
                     }
                 }
             }
