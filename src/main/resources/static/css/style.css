@@ -120,6 +120,16 @@ a {
     box-shadow: none !important;
 }
 
+/* admin table */
+#adminTable tr:nth-child(2n) {
+    background-color: #202020;
+    color: #fff;
+}
+
+#adminTable tr td, #adminTable tr th {
+    padding: 0.5rem;
+}
+
 /*table {
     margin: 0 0 40px 0;
     width: 100%;

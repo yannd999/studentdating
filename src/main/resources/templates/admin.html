@@ -28,15 +28,16 @@
         <h1 th:text="#{WelcomAdm}"></h1>
         <h2>Todo frame google analytics</h2><!-- todo -->
 
+        <h3 th:text="#{Students}"></h3>
         <div th:if="${users != null}">
-            <table>
+            <table id="adminTable">
                 <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Sex</th>
-                    <th>Age</th>
+                    <th th:text="#{firstName}"></th>
+                    <th th:text="#{lastName}"></th>
+                    <th th:text="#{Sex}"></th>
+                    <th th:text="#{Age}"></th>
                     <th>Email</th>
-                    <th>Location</th>
+                    <th th:text="Location"></th>
                 </tr>
                 <tr th:each="user: ${users}">
                     <td th:text="${user.firstName}"></td>
