@@ -48,14 +48,16 @@ public class UserController {
 
 	@GetMapping("/signup")
 	public String getCreateUser(Model model) {
-		model.addAttribute("user", new UserDTO());
+		model.addAttribute("newUser", new UserDTO());
 		return "signup";
 	}
 
+	// @RequestBody String request || @RequestParam("firstName") String firstName || @ModelAttribute("newUser") @Valid UserDTO user
 	@PostMapping("/signup")
-	public String postCreateUser(@ModelAttribute("user") UserDTO user, BindingResult bindingResult, Model model) { //@Validated @ModelAttribute("user") UserDTO user, BindingResult bindingResult, Model model) {//@Valid // todo validated?
+	public String postCreateUser(@RequestBody String request, BindingResult bindingResult, Model model) { //@Validated @ModelAttribute("newUser") UserDTO user, BindingResult bindingResult, Model model) {//@Valid // todo validated?
 		ArrayList<String> errors = new ArrayList<>();
-		if (user.getBirthDate() != null) {
+		errors.add(request); //todo
+		/*if (user.getBirthDate() != null) {
 			if (Period.between(user.getBirthDate(), LocalDate.now()).getYears() < 14 || Period.between(user.getBirthDate(), LocalDate.now()).getYears() > 40)
 				errors.add("You are too young");
 		}
@@ -65,7 +67,7 @@ public class UserController {
 		}
 		// unique email
 		UserDTO u = userService.getUser(user.getUsername());
-		if (u != null) errors.add("Email is already taken"); //todo db exception?
+		if (u != null) errors.add("Email is already taken"); //todo db exception?*/
 		if (bindingResult.hasErrors() || errors.size() != 0) {//todo check bindingresult
 			for (FieldError fe: bindingResult.getFieldErrors()) {
 				errors.add(fe.getDefaultMessage().split(":")[1]);
@@ -81,6 +83,7 @@ public class UserController {
 			model.addAttribute("errors", errors);
 			//todo return "/signup"; //todo gaat errors kwijt?
 		}*/
+		model.addAttribute("errors", errors);//todo weg
 		return "redirect:/login";
 	}
 
