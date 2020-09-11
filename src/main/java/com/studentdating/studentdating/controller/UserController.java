@@ -84,7 +84,7 @@ public class UserController {
 			//todo return "/signup"; //todo gaat errors kwijt?
 		}*/
 		model.addAttribute("errors", errors);
-		return "/signup"; //todo weg
+		return "signup"; //todo weg
 		//return "redirect:/login";
 	}
 
