@@ -129,6 +129,13 @@ a {
 #adminTable tr td, #adminTable tr th {
     padding: 0.5rem;
 }
+/* chat */
+#chat input[type=text] {
+    width: 75%;
+}
+#chat input[type=button] {
+    width: 25%;
+}
 
 /*table {
     margin: 0 0 40px 0;

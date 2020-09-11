@@ -71,7 +71,7 @@ public class UserController {
 				errors.add(fe.getDefaultMessage().split(":")[1]);
 			}
 			model.addAttribute("errors", errors);
-			return "/signup"; //todo gaat errors kwijt?
+			//todo return "/signup"; //todo gaat errors kwijt?
 		}
 		// IllegalArgument from UserService when passwords do not match
 		try {
@@ -79,7 +79,7 @@ public class UserController {
 		} catch (IllegalArgumentException x) {
 			errors.add(x.getMessage());
 			model.addAttribute("errors", errors);
-			return "/signup"; //todo gaat errors kwijt?
+			//todo return "/signup"; //todo gaat errors kwijt?
 		}
 		return "redirect:/login";
 	}
