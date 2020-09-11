@@ -54,7 +54,7 @@ public class UserController {
 
 	// @RequestBody String request || @RequestParam("firstName") String firstName || @ModelAttribute("newUser") @Valid UserDTO user
 	@PostMapping("/signup")
-	public String postCreateUser(@RequestBody String request, @Validated @ModelAttribute("newUser") UserDTO user, BindingResult bindingResult, Model model) { //@Validated @ModelAttribute("newUser") UserDTO user, BindingResult bindingResult, Model model) {//@Valid // todo validated?
+	public String postCreateUser(@RequestBody String request, BindingResult bindingResult, Model model) { //@Validated @ModelAttribute("newUser") UserDTO user, BindingResult bindingResult, Model model) {//@Valid // todo validated?
 		ArrayList<String> errors = new ArrayList<>();
 		errors.add(request); //todo
 		/*if (user.getBirthDate() != null) {
@@ -84,7 +84,7 @@ public class UserController {
 			//todo return "/signup"; //todo gaat errors kwijt?
 		}*/
 		//model.addAttribute("errors", errors); //todo weg
-		return "/signup"; //todo weg
+		return "todo"; //todo /signup"; //todo weg
 		//return "redirect:/login";
 	}
 
