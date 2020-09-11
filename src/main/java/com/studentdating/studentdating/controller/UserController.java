@@ -52,6 +52,11 @@ public class UserController {
 		return "signup";
 	}
 
+	@GetMapping("/test") //todo wegdoen
+	public String getTest() {
+		return "test";
+	}
+
 	// @RequestBody String request || @RequestParam("firstName") String firstName || @ModelAttribute("newUser") @Valid UserDTO user
 	@PostMapping("/signup")
 	public String postCreateUser(@RequestBody String request, BindingResult bindingResult, Model model) { //@Validated @ModelAttribute("newUser") UserDTO user, BindingResult bindingResult, Model model) {//@Valid // todo validated?
