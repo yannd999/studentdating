@@ -84,8 +84,8 @@ public class UserController {
 			//todo return "/signup"; //todo gaat errors kwijt?
 		}*/
 		model.addAttribute("errors", errors);
-		// todo test return signup
-		return "redirect:/login";
+		return "/signup"; //todo weg
+		//return "redirect:/login";
 	}
 
 	@GetMapping("/login")
