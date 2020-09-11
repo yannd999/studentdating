@@ -73,13 +73,13 @@ public class UserController {
 		// unique email
 		UserDTO u = userService.getUser(user.getUsername());
 		if (u != null) errors.add("Email is already taken"); //todo db exception?*/
-		if (bindingResult.hasErrors() || errors.size() != 0) {//todo check bindingresult
+		/*if (bindingResult.hasErrors() || errors.size() != 0) {//todo check bindingresult
 			for (FieldError fe: bindingResult.getFieldErrors()) {
 				errors.add(fe.getDefaultMessage().split(":")[1]);
 			}
 			//todo model.addAttribute("errors", errors);
 			//todo return "/signup"; //todo gaat errors kwijt?
-		}
+		}*/
 		// IllegalArgument from UserService when passwords do not match
 		/*try { // todo uncomment
 			userService.createUser(user);
@@ -89,7 +89,7 @@ public class UserController {
 			//todo return "/signup"; //todo gaat errors kwijt?
 		}*/
 		//model.addAttribute("errors", errors); //todo weg
-		return "/test"; //todo /signup"; //todo weg // todo omda /test -> methode getmapping /todo ç!!!!!!!!!!!!!!!!!!!!!!
+		return "test"; //todo /signup"; //todo weg // todo omda /test -> methode getmapping /todo ç!!!!!!!!!!!!!!!!!!!!!!
 		//return "redirect:/login";
 	}
 
