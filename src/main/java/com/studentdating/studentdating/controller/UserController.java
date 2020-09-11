@@ -74,14 +74,15 @@ public class UserController {
 			//todo return "/signup"; //todo gaat errors kwijt?
 		}
 		// IllegalArgument from UserService when passwords do not match
-		try {
+		/*try { // todo uncomment
 			userService.createUser(user);
 		} catch (IllegalArgumentException x) {
 			errors.add(x.getMessage());
 			model.addAttribute("errors", errors);
 			//todo return "/signup"; //todo gaat errors kwijt?
-		}
-		return "redirect:/login";
+		}*/
+		return "login";
+//		return "redirect:/login";
 	}
 
 	@GetMapping("/login")
