@@ -54,10 +54,10 @@ public class UserController {
 
 	// @RequestBody String request || @RequestParam("firstName") String firstName || @ModelAttribute("newUser") @Valid UserDTO user
 	@PostMapping("/signup")
-	public String postCreateUser(@RequestBody String request, @Validated @ModelAttribute("newUser") UserDTO user, BindingResult bindingResult, Model model) { //@Validated @ModelAttribute("newUser") UserDTO user, BindingResult bindingResult, Model model) {//@Valid // todo validated?
+	public String postCreateUser(@RequestBody String request, BindingResult bindingResult, Model model) { //@Validated @ModelAttribute("newUser") UserDTO user, BindingResult bindingResult, Model model) {//@Valid // todo validated?
 		ArrayList<String> errors = new ArrayList<>();
 		errors.add(request); //todo
-		if (user.getBirthDate() != null) {
+		/*if (user.getBirthDate() != null) {
 			if (Period.between(user.getBirthDate(), LocalDate.now()).getYears() < 14 || Period.between(user.getBirthDate(), LocalDate.now()).getYears() > 40)
 				errors.add("You are too young");
 		}
@@ -74,7 +74,7 @@ public class UserController {
 			}
 			//todo model.addAttribute("errors", errors);
 			//todo return "/signup"; //todo gaat errors kwijt?
-		}
+		}*/
 		// IllegalArgument from UserService when passwords do not match
 		/*try { // todo uncomment
 			userService.createUser(user);
