@@ -88,7 +88,7 @@ public class UserController {
 			model.addAttribute("errors", errors);
 			//todo return "/signup"; //todo gaat errors kwijt?
 		}*/
-		model.addAttribute("errors", errors); //todo weg
+		//model.addAttribute("errors", errors); //todo weg
 		return "test"; //todo /signup"; //todo weg // todo omda /test -> methode getmapping /todo ç!!!!!!!!!!!!!!!!!!!!!!
 		//return "redirect:/login";
 	}
