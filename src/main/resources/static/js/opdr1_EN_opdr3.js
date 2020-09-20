@@ -8,10 +8,8 @@ function init() {
     // event listeners
     for (var j = 0; j < document.getElementsByClassName("persoon").length; j++) {
         document.getElementsByClassName("persoon")[j].addEventListener("click", function (evt) {
-            console.log(evt.path); //todo
             var name = evt.path[0].parentElement.innerText;
-            console.log(name.substring(0, name.length - 6)); //todo
-            chatMetPersoon(evt.target.id, name);//nodeValue, value, textContent
+            chatMetPersoon(evt.target.id, name.substring(0, name.length - 6));//nodeValue, value, textContent
         }, false);
     }
 
