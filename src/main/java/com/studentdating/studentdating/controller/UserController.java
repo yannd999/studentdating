@@ -141,7 +141,8 @@ public class UserController {
 	}
 
 	@GetMapping("/showProfile&id=id")
-	public String showProfile(@RequestParam(name = "id") long id, Model model) {
+	public String showProfile(@RequestParam(name = "id") long id, Model model, HttpSession session) {
+		setUserInSession(session, model);
 		UserDTO user = userService.getUser(id);
 		if (user != null) {
 			model.addAttribute("user", user);
