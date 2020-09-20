@@ -47,7 +47,9 @@ public class UserServiceImpl implements UserService {
 		return getUsers().get((int) id);
 	} // todo id -1 ??
 	public UserDTO getUser(String username) {
-		return convert(repository.findByUsername(username));
+		User user = repository.findByUsername(username);
+		if (user == null) return null;
+		else return convert(user);
 	}
 
 	@Override //todo inlog role = lid
