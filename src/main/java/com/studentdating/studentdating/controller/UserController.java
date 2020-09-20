@@ -76,14 +76,14 @@ public class UserController {
 		} catch (Exception x) {
 			errors.add(x.getMessage()); //todo geeft error
 		}
-		/*if (u != null) errors.add("Email is already taken"); //todo db exception?
+		if (u != null) errors.add("Email is already taken"); //todo db exception?
 		if (bindingResult.hasErrors() || errors.size() != 0) {//todo check bindingresult
 			for (FieldError fe: bindingResult.getFieldErrors()) {
 				errors.add(fe.getDefaultMessage().split(":")[1]);
 			}
 			model.addAttribute("errors", errors);
 			//todo return "/signup"; //todo gaat errors kwijt?
-		}*/
+		}
 		// IllegalArgument from UserService when passwords do not match
 		/*try {
 			userService.createUser(user);
