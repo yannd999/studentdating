@@ -70,8 +70,7 @@ public class UserController {
 			if (!user.getSex().equals("M") && !user.getSex().equals("F"))
 				errors.add("Sex is invalid");
 		}
-		if (user.getBirthDate() == null) errors.add(user.getBirthDate().toString()); //todo
-		else errors.add("birthdate is null"); //todo
+		errors.add(user.getBirthDate().toString()); //todo
 		// unique email
 		UserDTO u = null;
 		try {
