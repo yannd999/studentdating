@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:insert="fragments/header.html :: style">
+    <meta charset="UTF-8">
+    <title>Profile | Student Dating</title>
+</head>
+<body>
+<header
+        th:replace="${session.user.role == 'administrator'} ?
+                    ~{fragments/header.html :: adminNav('Pro', '/showProfile&id=' + ${user.id})} :
+                    ~{fragments/header.html :: noAdminNav('Pro', '/showProfile&id=' + ${user.id})}">
+</header>
+
+<!--<div th:insert="fragments/nav.html :: header"></div>-->
+
+<main>
+    <div class="wrapper"><!-- todo remove class wrapper, one -->
+        <div class="one">
+            <h4 th:text="#{lastName} + ': ' + ${user.firstName} + ' ' + ${user.lastName} + ' (' + ${user.getAge()} + ${user.sex} + ')'"></h4>
+            <h4 th:text="Mail + ': ' + ${user.username}"></h4>
+            <h4 th:text="#{Location} + ': ' + ${user.location}"></h4>
+            <br>
+            <p><a style="color:#007bff;" href="/edit" th:text="#{editPro}"></a></p>
+            <!--todo in db: discord, snap, insta value, en op eigen profiel: vul in snap, discord, insta -->
+        </div>
+    </div>
+</main>
+<div th:insert="fragments/footer.html :: footer"></div>
+</body>
+</html>

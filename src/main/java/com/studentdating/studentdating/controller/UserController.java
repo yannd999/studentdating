@@ -141,8 +141,13 @@ public class UserController {
 	}
 
 	@GetMapping("/showProfile&id=id")
-	public String showProfile(@RequestParam(name = "id") long id) {
-		return String.valueOf(id);//todo
+	public String showProfile(@RequestParam(name = "id") long id, Model model) {
+		UserDTO user = userService.getUser(id);
+		if (user != null) {
+			model.addAttribute("user", user);
+			return "otherProfile";
+		}
+		return "everyone";
 	}
 
 	@GetMapping("/everyone")
