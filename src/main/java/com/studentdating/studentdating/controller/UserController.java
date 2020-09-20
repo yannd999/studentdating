@@ -74,7 +74,7 @@ public class UserController {
 		// unique email
 		UserDTO u = null;
 		try {
-			u = userService.getUser(user.getUsername());
+			if (user.getUsername() != null) u = userService.getUser(user.getUsername());
 		} catch (Exception x) {
 			errors.add("GetUser: " + x.getMessage()); // todo remove GetUser: //todo geeft error
 		}
