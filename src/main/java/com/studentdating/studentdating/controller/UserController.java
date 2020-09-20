@@ -40,7 +40,7 @@ public class UserController {
 
 	// TODO elke methode (get of post) moet eerst setUserInSession(session, model) oproepen tegen errors
 
-	@GetMapping("/testtwo")
+	@GetMapping("/testtwo") //todo wegdoen
 	public String getTwo() { // todo wegdoen
 		return "todo";
 	}
@@ -139,7 +139,7 @@ public class UserController {
 	}
 
 	@GetMapping("/showProfile&id={id}")
-	public String showProfile(@RequestParam(name = "id") long id, Model model, HttpSession session) {
+	public String showProfile(@PathVariable(name = "id") long id, Model model, HttpSession session) {
 		setUserInSession(session, model);
 		/*UserDTO user = userService.getUser(id);
 		if (user != null) {
