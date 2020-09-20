@@ -3,6 +3,7 @@ package com.studentdating.studentdating.model.service;
 import com.studentdating.studentdating.model.db.UserRepository;
 import com.studentdating.studentdating.model.dto.UserDTO;
 import com.studentdating.studentdating.model.entity.User;
+import com.studentdating.studentdating.model.exception.DomainException;
 import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -61,7 +62,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void createUser(UserDTO userDTO) {
 		System.out.println("Service create: " + userDTO.getFirstName() + " " + userDTO.getLastName() + " " + userDTO.getPassword() + " " + userDTO.getReppassword());//todo
-		if (!userDTO.getPassword().equals(userDTO.getReppassword())) throw new IllegalArgumentException("Passwords do not match"); //todo domainexcep, return signup
+		if (!userDTO.getPassword().equals(userDTO.getReppassword())) throw new DomainException("Passwords do not match");
 		User user = new User();
 		user.setFirstName(userDTO.getFirstName());
 		user.setLastName(userDTO.getLastName());
@@ -70,7 +71,7 @@ public class UserServiceImpl implements UserService {
 		user.setLocation(userDTO.getLocation());
 		user.setUsername(userDTO.getUsername());
 		user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
-		user.setRole("lid"); //userDTO.getUsername().endsWith("a") ? Role.ADMIN : Role.MEMBER); //todo neeeeen
+		user.setRole("lid");
 		System.out.println("new user: " + user.toString()); //todo
 		repository.save(user);
 	}

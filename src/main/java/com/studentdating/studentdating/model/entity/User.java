@@ -87,7 +87,7 @@ public class User implements Serializable { //serializable volgens tutorial http
 	}
 
 	public void setUsername(String username) {
-		if (username.trim().isEmpty()) throw new IllegalArgumentException("Username not valid");
+		if (username.trim().isEmpty()) throw new DomainException("Username not valid");
 		else this.username = username; // email
 	}
 
@@ -164,6 +164,6 @@ public class User implements Serializable { //serializable volgens tutorial http
 
 	@Override
 	public String toString() {
-		return id + " name: " + firstName + " " + lastName + ", birthday: " + birth_date + ", sex: " + sex + ", location: " + location + ", username: " + username + ", rol: " + role + ", pass: " + password; //todo password wegdoen
+		return id + " name: " + firstName + " " + lastName + ", birthday: " + birth_date + ", sex: " + sex + ", location: " + location + ", username: " + username + ", rol: " + role;
 	}
 }
