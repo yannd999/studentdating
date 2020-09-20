@@ -8,14 +8,13 @@ function init() {
     // event listeners
     for (var j = 0; j < document.getElementsByClassName("persoon").length; j++) {
         document.getElementsByClassName("persoon")[j].addEventListener("click", function (evt) {
-            chatMetPersoon(evt.target.id, evt.path[0].attributes[2].value);//nodeValue, value, textContent
+            chatMetPersoon(evt.target.id, evt.path[0].attributes[2].nodeValue);//nodeValue, value, textContent
         }, false);
     }
 
     getChats();
     //getStatus();
 }
-
 
 ////////////////////////////////////todo test met xml http
 function getStatus() {
