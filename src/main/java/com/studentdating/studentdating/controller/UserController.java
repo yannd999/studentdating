@@ -147,7 +147,7 @@ public class UserController {
 			model.addAttribute("user", user);
 			return "otherProfile";
 		}
-		return "everyone";
+		else return "everyone";
 	}
 
 	@GetMapping("/everyone")
