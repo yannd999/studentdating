@@ -25,10 +25,12 @@
                     <tr>
                         <th th:text="#{lastName}"></th>
                         <th th:text="#{Location}"></th>
+                        <th></th>
                     </tr>
                     <tr th:class="${person.sex} + ' ' + container" th:each="person: ${persons}">
                         <td th:text="${person.firstName} + ' (' + ${person.age} + ${person.sex} + ')'"></td>
                         <td th:text="${person.location}"></td>
+                        <td th:text="#{showProfile}"><a th:href="'/showProfile&id=' + ${person.id}"></a></td>
                     </tr>
                 </table>
             </div>

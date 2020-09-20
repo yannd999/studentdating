@@ -140,6 +140,11 @@ public class UserController {
 		return "profile";
 	}
 
+	@GetMapping("/showProfile&id=id")
+	public String showProfile(@RequestParam(name = "id") long id) {
+		return String.valueOf(id);//todo
+	}
+
 	@GetMapping("/everyone")
 	public String getEveryone(HttpSession session, Model model) {
 		setUserInSession(session, model);
