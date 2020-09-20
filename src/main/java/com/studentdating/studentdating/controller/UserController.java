@@ -2,7 +2,6 @@ package com.studentdating.studentdating.controller;
 
 import com.studentdating.studentdating.model.dto.MessageDTO;
 import com.studentdating.studentdating.model.dto.UserDTO;
-import com.studentdating.studentdating.model.exception.DomainException;
 import com.studentdating.studentdating.model.exception.NotAuthorizedException;
 import com.studentdating.studentdating.model.service.MessageService;
 import com.studentdating.studentdating.model.service.RelationService;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -140,16 +138,16 @@ public class UserController {
 		return "profile";
 	}
 
-	@GetMapping("/showProfile&id=id")
+	@GetMapping("/showProfile&id={id}")
 	public String showProfile(@RequestParam(name = "id") long id, Model model, HttpSession session) {
 		setUserInSession(session, model);
 		/*UserDTO user = userService.getUser(id);
 		if (user != null) {
 			model.addAttribute("user", user);
-			return "otherProfile";
+			return "otherprofile";
 		}
 		else return "redirect:/everyone";*/
-		return "otherProfile"; //todo weg
+		return "otherprofile"; //todo weg
 	}
 
 	@GetMapping("/everyone")
