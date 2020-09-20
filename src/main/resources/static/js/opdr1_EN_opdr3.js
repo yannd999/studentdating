@@ -8,7 +8,7 @@ function init() {
     // event listeners
     for (var j = 0; j < document.getElementsByClassName("persoon").length; j++) {
         document.getElementsByClassName("persoon")[j].addEventListener("click", function (evt) {
-            chatMetPersoon(evt.target.id);
+            chatMetPersoon(evt.target.id, evt.path[0].attributes[2].value);//nodeValue, value, textContent
         }, false);
     }
 
@@ -45,16 +45,20 @@ function setStatus() {
 
 // chatten
 // chat venster openen
-function chatMetPersoon(naam) {
+function chatMetPersoon(username, name) {
+    // elke chat onzichtbaar
+    /*for (var i = 0; i < document.getElementsByClassName("chat").length; i++) {
+        document.getElementsByClassName("chat")[i].style.visibility = "hidden"; //todo none?
+    }*///todo bij get chat wordt eerste chat weer visible
     // geen twee chats openen met zelfde persoon
-    if (document.getElementById('div' + naam) === null) { //todo.innerHTML === "") { //todo werkt niet met: length === 0) {
-        var divId = "div" + naam;
-        var div2Id = "div2" + naam;
-        var inputId = "bericht" + naam;
-        var buttonId = "button" + naam;
+    if (document.getElementById('div' + username) === null) { //todo.innerHTML === "") { //todo werkt niet met: length === 0) {
+        var divId = "div" + username;
+        var div2Id = "div2" + username;
+        var inputId = "bericht" + username;
+        var buttonId = "button" + username;
         var html =
-            "<div id=" + divId + " style=\"margin-top:5rem;border:2px dashed #000;padding:2rem;border-radius:1.2rem;width:75%;\">" +
-            "<h3>Chat met " + naam + "</h3>" + "<br>" + //todo chat met email not good
+            "<div class='chat' id=" + divId + " style=\"margin-top:5rem;border:2px dashed #000;padding:2rem;border-radius:1.2rem;width:75%;\">" +
+            "<h3>Chat met " + name + "</h3>" + "<br>" +
             "<div class='div2' id=" + div2Id + ">" +
             "</div>" + "<br>" +
             "<input type='text' id=" + inputId + ">" +
@@ -62,8 +66,9 @@ function chatMetPersoon(naam) {
             "</div>";
 
         $('#chat').append(html);
-        document.getElementById("button" + naam).addEventListener("click", function() {sendMessage(naam);}, false);
+        document.getElementById("button" + username).addEventListener("click", function() {sendMessage(username);}, false);
     }
+    //else document.getElementById('div' + naam).style.visibility = ""; //hoort bij lijn 52
 }
 
 function sendMessage(id) {
