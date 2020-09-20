@@ -38,7 +38,8 @@ public class UserServiceImpl implements UserService {
 	public List<UserDTO> getUsers() {
 		List<UserDTO> users = new ArrayList<>();
 		for (User u: repository.findAll()) { //todo sort by age
-			users.add(convert(u));
+			// don't show Admin or Testing // todo check if it doesn't give a problem
+			if (!u.getUsername().equals("admin@gmail.com") && !u.getUsername().equals("test@mail.com"))	users.add(convert(u));
 		}
 		return users;
 	}

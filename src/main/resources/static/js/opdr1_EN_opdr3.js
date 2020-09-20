@@ -9,7 +9,7 @@ function init() {
     for (var j = 0; j < document.getElementsByClassName("persoon").length; j++) {
         document.getElementsByClassName("persoon")[j].addEventListener("click", function (evt) {
             var name = evt.path[0].parentElement.innerText;
-            chatMetPersoon(evt.target.id, name.substring(0, name.length - 6));//nodeValue, value, textContent
+            chatMetPersoon(evt.target.id, name.substring(0, name.length - 5));//nodeValue, value, textContent
         }, false);
     }
 
