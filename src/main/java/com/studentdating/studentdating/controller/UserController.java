@@ -70,6 +70,7 @@ public class UserController {
 			if (!user.getSex().equals("M") && !user.getSex().equals("F"))
 				errors.add("Sex is invalid");
 		}
+		errors.add(user.getBirthDate().toString()); //todo
 		// unique email
 		UserDTO u = null;
 		try {
@@ -85,7 +86,7 @@ public class UserController {
 			model.addAttribute("errors", errors);
 			//todo return "/signup"; //todo gaat errors kwijt?
 		}
-		// IllegalArgument from UserService when passwords do not match
+		// DomainException from UserService when passwords do not match
 		try {
 			userService.createUser(user);
 		} catch (Exception x) { //todo Domain?
