@@ -84,7 +84,7 @@ public class UserController {
 				errors.add(fe.getDefaultMessage().split(":")[1]);
 			}
 			model.addAttribute("errors", errors);
-			return "/signup"; //todo gaat errors kwijt?
+			return "signup"; //todo gaat errors kwijt?
 		}
 		// DomainException from UserService when passwords do not match
 		try {
