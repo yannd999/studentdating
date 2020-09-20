@@ -70,7 +70,7 @@ public class UserController {
 				errors.add("Sex is invalid");
 		}
 		// unique email
-		//todo UserDTO u = userService.getUser(user.getUsername());
+		UserDTO u = userService.getUser(user.getUsername());
 		//todo if (u != null) errors.add("Email is already taken"); //todo db exception?
 		if (bindingResult.hasErrors() || errors.size() != 0) {//todo check bindingresult
 			for (FieldError fe: bindingResult.getFieldErrors()) {
