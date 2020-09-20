@@ -11,7 +11,7 @@
         <main style="margin:0 0 6% 36%;">
             <h1 class="title" style="width:45%;margin-top:5rem;" th:text="#{LogIn}"></h1><!-- style="margin:5rem 0 10rem 45%;"-->
 
-            <p style="background-color:#d9edf7;color:#31708f;margin-left:6%;width:16rem;padding:1rem;" th:if="${param.logout}" th:text="#{successLogout}"></p>
+            <p style="background-color:#d9edf7;color:#31708f;margin-left:6%;width:19rem;padding:1rem;" th:if="${param.logout}" th:text="#{successLogout}"></p>
             <p style="background-color:#f2dede;color:#b94a48;margin-left:14%;width:10rem;padding:1rem;" th:if="${param.error}" th:text="#{invalidCred}"></p>
 
             <form th:method="post" th:action="@{/login}" style="margin-bottom:3rem;">
