@@ -60,17 +60,17 @@ public class UserController {
 
 	// @RequestBody String request || @RequestParam("firstName") String firstName || @ModelAttribute("newUser") @Valid UserDTO user
 	@PostMapping("/signup")
-	public String postCreateUser(@RequestBody String request, @Validated @ModelAttribute("newUser") UserDTO user, BindingResult bindingResult, Model model) {
+	public String postCreateUser(@Validated @ModelAttribute("newUser") UserDTO user, BindingResult bindingResult, Model model) {
 		ArrayList<String> errors = new ArrayList<>();
 		if (user.getBirthDate() != null) {
 			if (Period.between(user.getBirthDate(), LocalDate.now()).getYears() < 14 || Period.between(user.getBirthDate(), LocalDate.now()).getYears() > 40)
 				errors.add("You are too young");
 		}
+		else errors.add("Birthdate is empty");
 		if (user.getSex() != null) {
 			if (!user.getSex().equals("M") && !user.getSex().equals("F"))
 				errors.add("Sex is invalid");
 		}
-		errors.add(request); //todo
 		// unique email
 		UserDTO u = null;
 		try {
