@@ -143,12 +143,13 @@ public class UserController {
 	@GetMapping("/showProfile&id=id")
 	public String showProfile(@RequestParam(name = "id") long id, Model model, HttpSession session) {
 		setUserInSession(session, model);
-		UserDTO user = userService.getUser(id);
+		/*UserDTO user = userService.getUser(id);
 		if (user != null) {
 			model.addAttribute("user", user);
 			return "otherProfile";
 		}
-		else return "redirect:/everyone";
+		else return "redirect:/everyone";*/
+		return "otherProfile"; //todo weg
 	}
 
 	@GetMapping("/everyone")
