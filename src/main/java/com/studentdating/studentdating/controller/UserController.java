@@ -86,13 +86,13 @@ public class UserController {
 			//todo return "/signup"; //todo gaat errors kwijt?
 		}
 		// IllegalArgument from UserService when passwords do not match
-		try {
+		/*try {
 			userService.createUser(user);
 		} catch (DomainException x) {
 			errors.add(x.getMessage());
 			model.addAttribute("errors", errors);
 			//todo return "/signup"; //todo gaat errors kwijt?
-		}
+		}*/
 		model.addAttribute("errors", errors);//todo weg
 		return "test"; //todo /signup"; //todo weg // todo omda /test -> methode getmapping /todo ç!!!!!!!!!!!!!!!!!!!!!!
 		//return "redirect:/login";
