@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
 
 	public UserDTO getUser(long id) {
 		return getUsers().get((int) id);
-	} // todo id -1 ??
+	}
 	public UserDTO getUser(String username) {
 		User user = repository.findByUsername(username);
 		if (user == null) return null;
