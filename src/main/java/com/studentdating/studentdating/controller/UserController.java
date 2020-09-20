@@ -65,8 +65,8 @@ public class UserController {
 		if (user.getBirthDate() != null) {
 			if (Period.between(user.getBirthDate(), LocalDate.now()).getYears() < 14 || Period.between(user.getBirthDate(), LocalDate.now()).getYears() > 40)
 				errors.add("You are too young");
-		}
-		else errors.add("Birthdate is empty");
+			}
+			else errors.add("Birthdate is empty");
 		if (user.getSex() != null) {
 			if (!user.getSex().equals("M") && !user.getSex().equals("F"))
 				errors.add("Sex is invalid");
@@ -76,7 +76,7 @@ public class UserController {
 		try {
 			u = userService.getUser(user.getUsername());
 		} catch (Exception x) {
-			errors.add(x.getMessage()); //todo geeft error
+			errors.add("GetUser: " + x.getMessage()); // todo remove GetUser: //todo geeft error
 		}
 		if (u != null) errors.add("Email is already taken"); //todo db exception?
 		if (bindingResult.hasErrors() || errors.size() != 0) {//todo check bindingresult
@@ -84,7 +84,7 @@ public class UserController {
 				errors.add(fe.getDefaultMessage().split(":")[1]);
 			}
 			model.addAttribute("errors", errors);
-			//todo return "/signup"; //todo gaat errors kwijt?
+			return "/signup"; //todo gaat errors kwijt?
 		}
 		// DomainException from UserService when passwords do not match
 		try {
@@ -92,7 +92,7 @@ public class UserController {
 		} catch (Exception x) { //todo Domain?
 			errors.add(x.getMessage());
 			model.addAttribute("errors", errors);
-			return "signup"; //todo gaat errors kwijt?
+			return "signup";
 		}
 		return "redirect:/login";
 	}
