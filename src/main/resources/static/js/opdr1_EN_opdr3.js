@@ -8,7 +8,8 @@ function init() {
     // event listeners
     for (var j = 0; j < document.getElementsByClassName("persoon").length; j++) {
         document.getElementsByClassName("persoon")[j].addEventListener("click", function (evt) {
-            console.log("evt: " + evt); //todo
+            console.log(evt.target); //todo
+            console.log(evt.path); //todo
             chatMetPersoon(evt.target.id, evt.path[0].attributes[2].value);//nodeValue, value, textContent
         }, false);
     }
